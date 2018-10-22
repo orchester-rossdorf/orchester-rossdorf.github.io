@@ -1,0 +1,632 @@
+// GENERAL: VARIABLES
+
+//colors
+$color_medium: #397FBF;  //dunkles blau
+$color_dark: #0063BF;   //mittleres blau
+$color_black: #003A70;   // dunkles blau
+
+
+$max-width: 991px;
+
+html{
+  font-size: 10px; //1rem=10px
+  width: 100%;
+  height: 100%;
+}
+
+
+@import 'variables.scss';
+@import 'mixins.scss';
+body {
+  font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
+  position: relative;
+  color: white;
+  background-color: $color_dark;
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  margin: 0 0 35px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin: 0 0 25px;
+  @media(min-width: 768px) {
+    font-size: 1.8rm;
+    line-height: 1.6;
+    margin: 0 0 35px;
+  }
+}
+
+
+.roundedCorners{
+    border-radius: 2rem;
+}
+/*** GENERAL: MOBILE & DESKTOP SCREEN ***/
+@media only screen and (max-width: $max-width){
+  #hidden_mobile{
+    display: none;
+  }
+}
+
+@media only screen and (min-width: $max-width) {
+  #hidden_desktop{
+    display: none ;
+  }
+}
+
+#mainNav {
+  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid fade-out(white, .7);
+  .navbar-toggler {
+    font-size: 1.4rem;
+    padding: 11px;
+    color: white;
+    border: 1px solid white;
+  }
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  a {
+    color: white;
+    text-shadow:
+      -1px -1px 0 #000,
+       1px -1px 0 #000,
+      -1px  1px 0 #000,
+       1px  1px 0 #000;
+  }
+  .navbar-nav {
+    .nav-item {
+      -webkit-transition: background 0.3s ease-in-out;
+      -moz-transition: background 0.3s ease-in-out;
+      transition: background 0.3s ease-in-out;
+      &:hover {
+        color: fade(white, 80%);
+        outline: none;
+        background-color: transparent;
+      }
+      &:active,
+      &:focus {
+        outline: none;
+        background-color: transparent;
+      }
+    }
+  }
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    -webkit-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+    -moz-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+    transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+    letter-spacing: 1px;
+
+    border-bottom: none;
+    background: $color_dark;
+    opacity: .7;
+    &.navbar-shrink {
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      border-bottom: 1px solid fade-out(white, .7);
+      opacity: 1;
+    }
+    .nav-link.active {
+      outline: none;
+      background-color: rgba(white, .3);
+      &:hover {
+        color: white;
+      }
+    }
+
+    @media only screen and (max-width: $max-width){
+      background: transparent;
+
+      &.navbar-shrink {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: $color_dark;
+        border-bottom: 1px solid fade-out(white, .7);
+        opacity: 1;
+      }
+    }
+}
+
+.landingpage {
+  height: 50rem;
+  padding-top: 10rem;
+
+  //less than 768px — extra small (xs)
+  @media(max-width:768px) {
+  display: none;
+  }
+
+  // 768-991px — small (sm)
+  @media only screen and (min-width: 769px) and (max-width: 991px){
+    background: url('../img/orchesterJanuar_991px.jpg') no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+  }
+
+  //992-1199px — medium (md)
+    @media only screen and (min-width: 992px) and (max-width: 1199px){
+    background: url('../img/orchesterJanuar_1200px.jpg') no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+  }
+
+  //greater than 1199px — large (lg)
+  @media(min-width:1200px) {
+  background: url('../img/orchesterJanuar_2000px.jpg') no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  }
+
+}
+
+.container_media{
+  img{
+    //xs and sm
+      @media only screen and (max-width: 991px){
+        padding: 5px;
+        height: auto;
+        width: auto;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    //992-1199px — medium (md)
+      @media only screen and (min-width: 992px) and (max-width: 1199px){
+        padding: 25px;
+        height: auto;
+        width: auto;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    //greater than 1199px — large (lg)
+    @media(min-width:1200px) {
+      padding: 10px 50px;
+      height: auto;
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+.container_media_side{
+  @extend .container_media;
+  width: 40%;
+  padding: 20px;
+
+  @media(max-width:991px){
+    width: 80%;
+    padding: 10px;
+  }
+}
+
+.container_side{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  padding: 15px;
+  width: 70%;
+
+  @media(max-width:991px){
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+
+.red{
+  color: red;
+}
+
+.content-section {
+  padding-top: 30px;
+  padding-bottom: 10px;
+
+  h3{
+    font-size: 2.3rem;
+    padding-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  p{
+    font-family: sans-serif;
+  }
+
+  a{
+    color: white;
+    text-decoration: underline;
+    text-decoration-style: solid;
+  }
+
+  img{
+    margin-bottom: 30px;
+  }
+}
+
+.center{
+  text-align: center;
+}
+
+.blocksatz{
+  text-align: justify;
+  padding: 10px 35px;
+  margin: 0;
+}
+
+.header_left{
+  padding-top: 40px;
+  padding-left: 50px;
+  margin: 0;
+  text-align: left;
+
+  @media(max-width:991px){
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.header_right{
+  padding-top: 40px;
+  padding-right: 50px;
+  margin: 0;
+  text-align: right;
+
+  @media(max-width:991px){
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.background-medium{
+  background-color: $color_medium;
+}
+
+.partitur-background{
+  background: url('../img/PartiturAlleStimmenHeller.jpg') no-repeat center center scroll;
+  background-color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.info-section-background{
+  background-color: $color_medium;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  @media(max-width:991px){
+    background-color: $color_medium;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.info-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media(max-width:991px){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+
+.termine-section {
+  display: flex;
+  color: white;
+
+  p, h2, h3, h5, h6{
+    color: $color_black;
+  }
+
+  p, h3, h6 {
+    text-align: left;
+  }
+
+  h6{
+    padding: 10px;
+    margin: 0px;
+    font-size: 1.5rem;
+  }
+
+  h3, h5{
+    font-size: 2rem;
+  }
+
+  h2{
+    padding-top: 25px;
+  }
+
+  ul{
+    padding: 0px 30px;
+    color: $color_black;
+    text-align: left;
+    font-family: sans-serif;
+    list-style-type: circle;
+  }
+
+
+
+  .termine{
+    background-color: white;
+    color: black;
+    border: 2px solid $color_black;
+    padding: 5px;
+  }
+
+//todo: hier verschiedene groessen fuer XS, SM, MD, LG, dann sollte es hoffentlich klappen!!
+  .galery{
+      background-color: white;
+      color: black;
+      opacity: 1;
+      border: 2px solid $color_black;
+      padding: 5px;
+
+      h2{
+        padding: 10px;
+        margin-bottom: 0;
+      }
+
+      /*
+      *  position: relative gives a new position context
+      */
+      .wrapper {
+        position: relative;
+      }
+
+      /*
+      *  The .carousel properties are for styling only
+      *  These properties can be changed or removed
+      */
+      .carousel {
+        //xs
+          @media only screen and (max-width: 768px){
+            height: 200px;
+        }
+
+        //sm
+          @media only screen and (max-width: 991px){
+            height: 300px;
+        }
+
+        //992-1199px — medium (md)
+          @media only screen and (min-width: 992px) and (max-width: 1199px){
+            height: 400px;
+        }
+
+        //greater than 1199px — large (lg)
+        @media(min-width:1200px) {
+          height: 500px;
+        }
+
+      }
+
+      /*
+      *  Position the #transparent element in the top-right
+      *  of the .wrapper element
+      */
+      #transparent {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        /*
+        *  Styling only, the below can be changed or removed
+        *  depending on your use case
+        */
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a {
+          color: white;
+          opacity: .7;
+          font-size: 100px;
+        }
+
+        a:hover{
+            color: white;
+            cursor: pointer;
+        }
+
+
+        //xs
+          @media only screen and(min-width: 551px) and (max-width: 768px){
+            height: 300px;
+            width: 490px;
+        }
+
+        //sm
+          @media only screen and (min-width: 769px) and (max-width: 991px){
+            height: 300px;
+            width: 560px;
+        }
+
+        //992-1199px — medium (md)
+          @media only screen and (min-width: 992px) and (max-width: 1199px){
+            height: 400px;
+            width: 760px;
+        }
+
+        //greater than 1199px — large (lg)
+        @media(min-width:1200px) {
+          height: 500px;
+          width: 910px;  //in lg  beide anpassen fuer md, sm, xs! auch an den anderen stellen@@
+        }
+
+      }
+
+
+      /*** JUMBOTRON ***/
+      .jumbotron {
+        // height: 500px;  //images are 3680x2000px 368x200 739x400
+        padding-top: 10px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        //xs
+          @media only screen and (max-width: 768px){
+            height: 200px;
+        }
+
+        //sm
+          @media only screen and (max-width: 991px){
+            height: 300px;
+        }
+
+        //992-1199px — medium (md)
+          @media only screen and (min-width: 992px) and (max-width: 1199px){
+            height: 400px;
+        }
+
+        //greater than 1199px — large (lg)
+        @media(min-width:1200px) {
+          height: 500px;
+        }
+
+      }
+   }
+}
+
+.jumbotron-orchester1{
+  background-image: url("../img/orchesterJuni.jpg");
+}
+
+.jumbotron-orchester2{
+  background-image: url("../img/orchesterJanuar.jpg");
+}
+
+.jumbotron-orchester3{
+  background-image: url("../img/orchesterJanuar2.png");
+}
+
+@media(min-width:992px) {
+  .content-section {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+}
+
+.btn {
+  font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+
+  border-radius: 0;
+}
+
+.btn-default {
+  color: $primary;
+  border: 1px solid $primary;
+  background-color: transparent;
+  &:focus,
+  &:hover {
+    color: black;
+    border: 1px solid $primary;
+    outline: none;
+    background-color: $primary;
+  }
+}
+
+ul.banner-social-buttons {
+  margin-top: 0;
+  @media(max-width: 1199px) {
+    margin-top: 15px;
+  }
+  @media(max-width:767px) {
+    li {
+      display: block;
+
+      margin-bottom: 20px;
+      padding: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $color_black;
+  padding: 50px 0;
+  p {
+    font-size: 14px;
+
+    margin: 0;
+  }
+}
+
+::-moz-selection {
+  background: #fcfcfc;
+  background: fade-out(white, .8);
+  text-shadow: none;
+}
+
+::selection {
+  background: #fcfcfc;
+  background: fade-out(white, .8);
+  text-shadow: none;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+body {
+  -webkit-tap-highlight-color: fade-out(white, .8);
+}
