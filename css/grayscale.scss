@@ -57,7 +57,7 @@ p {
 }
 /*** GENERAL: MOBILE & DESKTOP SCREEN ***/
 @media only screen and (max-width: $max-width){
-  #hidden_mobile{
+  .hidden_mobile{
     display: none;
   }
 }
@@ -135,7 +135,7 @@ p {
     }
 
     @media only screen and (max-width: $max-width){
-      background: transparent;
+      //background: transparent;
 
       &.navbar-shrink {
         padding-top: 10px;
@@ -151,19 +151,22 @@ p {
   height: 50rem;
   padding-top: 10rem;
 
-  //less than 768px — extra small (xs)
-  @media(max-width:768px) {
-  display: none;
-  }
-
   // 768-991px — small (sm)
-  @media only screen and (min-width: 769px) and (max-width: 991px){
+  //@media only screen and (min-width: 769px) and (max-width: 991px){
     background: url('../img/orchesterJanuar_991px.jpg') no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     height: 100%;
+  //}
+  
+   //less than 768px — extra small (xs)
+  @media(max-width:768px) {
+  //display: none;
+    height: 0;
+    margin-top: 60px;
+    padding-top: 56.5%;
   }
 
   //992-1199px — medium (md)
@@ -227,6 +230,7 @@ p {
   @media(max-width:991px){
     width: 80%;
     padding: 10px;
+    text-align: center;
   }
 }
 
@@ -275,7 +279,7 @@ p {
   }
 
   img{
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 }
 
@@ -348,6 +352,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 16px 0;
 
   @media(max-width:991px){
     display: flex;
@@ -419,6 +424,14 @@ p {
       */
       .wrapper {
         position: relative;
+      }
+      
+      .gallery-nav{
+          .button{
+            @media only screen and (max-width: 768px){
+                transform: scale(0.5);
+            }
+          }
       }
 
       /*
