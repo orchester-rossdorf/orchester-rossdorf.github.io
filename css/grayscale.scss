@@ -160,7 +160,7 @@ p {
     background-size: cover;
     height: 100%;
   //}
-  
+
    //less than 768px — extra small (xs)
   @media(max-width:768px) {
   //display: none;
@@ -425,7 +425,7 @@ p {
       .wrapper {
         position: relative;
       }
-      
+
       .gallery-nav{
           .button{
             @media only screen and (max-width: 768px){
@@ -642,4 +642,14 @@ img::-moz-selection {
 
 body {
   -webkit-tap-highlight-color: fade-out(white, .8);
+}
+
+#datenschutz {
+  margin-top:57px;
+  background-color: $color_black;
+}
+
+#impressum {
+  margin-top:57px;
+  background-color: $color_black;
 }
