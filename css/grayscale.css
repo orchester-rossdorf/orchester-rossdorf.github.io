@@ -388,6 +388,15 @@ p {
 .jumbotron-orchester3 {
   background-image: url("../img/orchesterJanuar2.png"); }
 
+.jumbotron-orchester4 {
+  background-image: url("../img/orchesterJanuar19_1.png"); }
+
+.jumbotron-orchester5 {
+  background-image: url("../img/orchesterJanuar19_2.png"); }
+
+.jumbotron-orchester6 {
+  background-image: url("../img/orchesterJanuar19_3.png"); }
+
 @media (min-width: 992px) {
   .content-section {
     padding-top: 30px;
@@ -449,5 +458,13 @@ img::-moz-selection {
 
 body {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2); }
+
+#datenschutz {
+  margin-top: 57px;
+  background-color: #003A70; }
+
+#impressum {
+  margin-top: 57px;
+  background-color: #003A70; }
 
 /*# sourceMappingURL=grayscale.css.map */
