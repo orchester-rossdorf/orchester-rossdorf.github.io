@@ -10,7 +10,8 @@ $(document).ready(function() {
 	slidesToScroll: 1,
 	pauseOnFocus: false,
 	pauseOnHover: false,
-	draggable: true
+	draggable: true//,
+	//lazyLoad: 'ondemand'
 	});
 
   //use these to implement prev and next click
